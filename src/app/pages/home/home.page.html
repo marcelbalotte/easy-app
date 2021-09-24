@@ -1,20 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>EASY</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false" style="color: #FFFFFF"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="todays-tasks">
+    <ion-card-header class="todays-tasks-header">
+      <ion-card-title>
+        <ion-icon name="today-outline"></ion-icon>
+        Today's Tasks
+      </ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card-content class="todays-tasks-content">
+      <ion-card class="item-card">
+        <ion-card-title class="item-card-title">Project Management</ion-card-title>
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            19:00
+            <ion-checkbox mode="md"></ion-checkbox>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-title class="item-card-title">Project Management</ion-card-title>
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            19:00
+            <ion-checkbox mode="md"></ion-checkbox>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-title class="item-card-title">Project Management</ion-card-title>
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            19:00
+            <ion-checkbox mode="md"></ion-checkbox>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-title class="item-card-title">Project Management</ion-card-title>
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            19:00
+            <ion-checkbox mode="md"></ion-checkbox>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+
+  <div align="center">
+    <ion-button type="button">
+      <ion-icon name="list-outline"></ion-icon>
+      <h1>Subjects</h1>
+    </ion-button>
+  </div>
+
+  <div align="center">
+    <ion-button type="button">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <h1>Calendar</h1>
+    </ion-button>
   </div>
 </ion-content>
