@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-subjects',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainSubjectsPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
 
+  navigateToHome() {
+    this.route.navigate(['/home']);
+  }
+
+  navigateToSelectedSubject() {
+    this.route.navigate(['/subject']);
+  }
 }

@@ -19,13 +19,19 @@
       </div>
 
       <div align="center" class="button-group">
-        <ion-button type="button">
+        <ion-button type="button" (click)="navigateToHome()">
           Login
         </ion-button>
       </div>
     </form>
 
-    <p>Forgot your password? Recover here</p>
-    <p>Don't have an account? Signup here</p>
+    <ion-row>
+      <p>Forgot your password?</p>
+      <p style="color: #38C5C5" (click)="navigateToForgotPassword()">Recover here</p>
+    </ion-row>
+    <ion-row>
+      <p>Don't have an account?</p>
+      <p style="color: #38C5C5" (click)="navigateToRegister()">Signup here</p>
+    </ion-row>
   </div>
 </ion-content>

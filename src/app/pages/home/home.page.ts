@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private route: Router) {}
 
+  navigateToMainSubjects() {
+    this.route.navigate(['/main-subjects']);
+  }
+
+  navigateToCalendar() {
+    this.route.navigate(['/calendar']);
+  }
+
+  // TODO: remove function, added just to implement all the navigations.
+  navigateToLogin() {
+    this.route.navigate(['/login']);
+  }
 }

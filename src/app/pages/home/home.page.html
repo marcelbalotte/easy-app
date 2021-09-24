@@ -4,6 +4,10 @@
     <ion-buttons slot="end">
       <ion-menu-button autoHide="false" style="color: #FFFFFF"></ion-menu-button>
     </ion-buttons>
+    <!-- TODO: remove icon, added just to implement all the navigations.-->
+    <ion-buttons slot="start">
+      <ion-icon name="log-out-outline" (click)="navigateToLogin()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -57,14 +61,14 @@
   </ion-card>
 
   <div align="center">
-    <ion-button type="button">
+    <ion-button type="button" (click)="navigateToMainSubjects()">
       <ion-icon name="list-outline"></ion-icon>
       <h1>Subjects</h1>
     </ion-button>
   </div>
 
   <div align="center">
-    <ion-button type="button">
+    <ion-button type="button" (click)="navigateToCalendar()">
       <ion-icon name="calendar-outline"></ion-icon>
       <h1>Calendar</h1>
     </ion-button>
