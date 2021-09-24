@@ -1,9 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Calendar</ion-title>
+    <ion-title>EASY</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false" style="color: #FFFFFF"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-card class="todays-tasks">
+    <ion-card-header class="todays-tasks-header">
+      <ion-card-title>
+        <ion-icon name="calendar-outline"></ion-icon>
+        Calendar
+      </ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content class="todays-tasks-content">
+      <ion-card class="item-card">
+        Here goes the calendar!
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
