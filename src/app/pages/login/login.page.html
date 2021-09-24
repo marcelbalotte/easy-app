@@ -1,37 +1,34 @@
-<ion-header>
-</ion-header>
+<ion-content fvullscreen>
+  <div class="content">
+    <div class="ion-text-center">
+      <h1>EASY</h1>
 
-<ion-content padding>
-  <div align="center">
-    <h1>EASY</h1>
-  </div>
-  <div class="ion-text-center">
-    <form>
-      <div class="input-group">
-        <ion-item style="margin:10px">
+      <form>
+        <ion-item lines="none">
           <ion-icon name="person-outline" slot="start"></ion-icon>
           <ion-input type="name" placeholder="Username"></ion-input>
         </ion-item>
-        <ion-item style="margin:10px">
+        <ion-item lines="none">
           <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
           <ion-input type="password" placeholder="Password"></ion-input>
         </ion-item>
-      </div>
 
-      <div align="center" class="button-group">
         <ion-button type="button" (click)="navigateToHome()">
           Login
         </ion-button>
-      </div>
-    </form>
+      </form>
 
-    <ion-row>
-      <p>Forgot your password?</p>
-      <p style="color: #38C5C5" (click)="navigateToForgotPassword()">Recover here</p>
-    </ion-row>
-    <ion-row>
-      <p>Don't have an account?</p>
-      <p style="color: #38C5C5" (click)="navigateToRegister()">Signup here</p>
-    </ion-row>
+      <div class="forgot-password">
+        Forgot your password? <span style="color: #38C5C5">Recover here</span>
+      </div>
+    </div>
   </div>
 </ion-content>
+
+<ion-footer class="footer">
+  <div class="ion-text-center">
+    <row>
+      Don't have an account? <span style="color: #38C5C5">Signup here</span>
+    </row>
+  </div>
+</ion-footer>
