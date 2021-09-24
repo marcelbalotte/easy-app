@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <div align="center">
+    <h1>EASY</h1>
+  </div>
+  <div class="ion-text-center">
+    <form>
+      <div class="input-group">
+        <ion-item style="margin:10px">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-input type="name" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item style="margin:10px">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+      </div>
 
+      <div align="center" class="button-group">
+        <ion-button type="button">
+          Login
+        </ion-button>
+      </div>
+    </form>
+
+    <p>Forgot your password? Recover here</p>
+    <p>Don't have an account? Signup here</p>
+  </div>
 </ion-content>
