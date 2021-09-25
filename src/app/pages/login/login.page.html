@@ -1,8 +1,9 @@
 <ion-content fullscreen>
   <div class="content">
-    <div class="ion-text-center">
+    <div class="ion-text-center" style="position: fixed; margin-bottom: calc(50vh);">
       <h1>Ea<span>s</span>y</h1>
-
+    </div>
+    <div class="ion-text-center">
       <form>
         <ion-item lines="none">
           <ion-icon name="person-outline" slot="start"></ion-icon>
@@ -19,7 +20,9 @@
       </form>
 
       <div>
-        <p (click)="navigateToForgotPassword()">Forgot your password? <span>Recover here</span></p>
+        <p (click)="navigateToForgotPassword()">
+          Forgot your password? <span>Recover here</span>
+        </p>
       </div>
     </div>
   </div>
@@ -27,6 +30,8 @@
 
 <ion-footer class="footer">
   <div class="ion-text-center">
-    <p (click)="navigateToRegister()">Don't have an account? <span>Signup here</span></p>
+    <p (click)="navigateToRegister()">
+      Don't have an account? <span>Signup here</span>
+    </p>
   </div>
 </ion-footer>
