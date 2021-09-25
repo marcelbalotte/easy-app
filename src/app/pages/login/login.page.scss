@@ -17,10 +17,32 @@ ion-item {
 ion-button {
     --background: #38C5C5;
     --border-radius: 5px;
+    --background-activated: #27B4B4; 
+    --background-focused: #16A3A3;
+    --color-activated: #FFFFFF;
+    --color-focused: #FFFFFF;
     margin-top: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     font-weight: bold;
     width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+span {
+    color: #38C5C5;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .content {

@@ -1,7 +1,7 @@
-<ion-content fvullscreen>
+<ion-content fullscreen>
   <div class="content">
     <div class="ion-text-center">
-      <h1>EASY</h1>
+      <h1>Ea<span>s</span>y</h1>
 
       <form>
         <ion-item lines="none">
@@ -18,8 +18,8 @@
         </ion-button>
       </form>
 
-      <div class="forgot-password">
-        Forgot your password? <span style="color: #38C5C5">Recover here</span>
+      <div>
+        <p (click)="navigateToForgotPassword()">Forgot your password? <span>Recover here</span></p>
       </div>
     </div>
   </div>
@@ -27,8 +27,6 @@
 
 <ion-footer class="footer">
   <div class="ion-text-center">
-    <row>
-      Don't have an account? <span style="color: #38C5C5">Signup here</span>
-    </row>
+    <p (click)="navigateToRegister()">Don't have an account? <span>Signup here</span></p>
   </div>
 </ion-footer>
