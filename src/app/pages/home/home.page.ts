@@ -18,7 +18,6 @@ export class HomePage {
     this.route.navigate(['/calendar']);
   }
 
-  // TODO: remove function, added just to implement all the navigations.
   navigateToLogin() {
     this.route.navigate(['/login']);
   }

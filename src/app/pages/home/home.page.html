@@ -5,11 +5,19 @@
         <h1>Ea<span>s</span>y</h1>
       </ion-title>
       <ion-buttons slot="end">
-        <ion-menu-button autoHide="false" style="color: #ffffff">
+        <ion-menu-button
+          class="icon-toolbar"
+          autoHide="false"
+          style="color: #ffffff"
+        >
         </ion-menu-button>
       </ion-buttons>
       <ion-buttons slot="start">
-        <ion-icon name="log-out-outline" (click)="navigateToLogin()"></ion-icon>
+        <ion-icon
+          class="icon-toolbar"
+          name="log-out-outline"
+          (click)="navigateToLogin()"
+        ></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-row>
@@ -95,18 +103,33 @@
     </div>
   </ion-card>
 
-  <ion-row>
+  <!-- <ion-row>
     <ion-col col-6>
       <ion-button (click)="navigateToMainSubjects()">
         <ion-icon slot="start" name="list-outline"></ion-icon>
         <span style="font-weight: bold;"> MATÉRIAS </span>
       </ion-button>
     </ion-col>
+    <ion-col col-6> 
+      <ion-button (click)="navigateToMainSubjects()">
+        <ion-icon slot="start" name="list-outline"></ion-icon>
+        <span style="font-weight: bold;"> CALENDAR </span>
+      </ion-button>
+    </ion-col>
+  </ion-row> -->
 
-    <ion-col col-6>
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="navigateToMainSubjects()">
+        <ion-icon slot="start" name="list-outline"></ion-icon>
+        <span style="font-weight: bold"> MATÉRIAS </span>
+      </ion-button>
+    </ion-col>
+
+    <ion-col>
       <ion-button (click)="navigateToCalendar()">
         <ion-icon slot="start" name="calendar-outline"></ion-icon>
-        <span style="font-weight: bold;"> CALENDÁRIO </span>
+        <span style="font-weight: bold"> CALENDAR </span>
       </ion-button>
     </ion-col>
   </ion-row>
