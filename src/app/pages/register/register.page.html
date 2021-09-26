@@ -1,39 +1,43 @@
-<ion-header>
-</ion-header>
+<ion-content fullscreen>
+  <div class="content">
+    <div class="ion-text-center div-logo">
+      <h1>Ea<span>s</span>y</h1>
+    </div>
 
-<ion-content padding>
-  <div align="center">
-    <h1>EASY</h1>
-  </div>
-  <div class="ion-text-center">
-    <form>
-      <div class="input-group">
-        <ion-item style="margin:10px">
-          <ion-icon name="person-outline" slot="start"></ion-icon>
-          <ion-input type="name" placeholder="Username"></ion-input>
-        </ion-item>
-        <ion-item style="margin:10px">
-          <ion-icon name="mail-outline" slot="start"></ion-icon>
-          <ion-input type="email" placeholder="Email"></ion-input>
-        </ion-item>
-        <ion-item style="margin:10px">
-          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-          <ion-input type="password" placeholder="Password"></ion-input>
-        </ion-item>
-        <ion-item style="margin:10px">
-          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-          <ion-input type="password" placeholder="Confirm password"></ion-input>
-        </ion-item>
-      </div>
+    <div class="ion-text-center">
+      <ion-row>
+        <ion-col col-12>
+          <ion-item lines="none">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-input type="name" placeholder="Username"></ion-input>
+          </ion-item>
 
-      <div align="center" class="button-group">
-        <ion-button type="button" (click)="navigateToLogin()">
-          GO BACK
-        </ion-button>
-        <ion-button type="button">
-          REGISTER
-        </ion-button>
-      </div>
-    </form>
+          <ion-item lines="none">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-input type="EMAIL" placeholder="Email"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-input type="password" placeholder="Password"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-input type="password" placeholder="Confirm password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-button type="button" (click)="navigateToLogin()">
+            GO BACK
+          </ion-button>
+        </ion-col>
+        <ion-col col-6>
+          <ion-button type="button"> REGISTER </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
 </ion-content>
