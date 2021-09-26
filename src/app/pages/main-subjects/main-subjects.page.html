@@ -1,14 +1,21 @@
+<!-- TODO: AUMENTAR TAMANHO DO ÍCONE DE VOLTAR PÁGINA -->
+
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>EASY</ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button autoHide="false" style="color: #FFFFFF"></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="start">
-      <ion-icon name="arrow-back-outline" (click)="navigateToHome()"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+  <ion-row>
+    <ion-toolbar>
+      <ion-title>
+        <h1>Ea<span>s</span>y</h1>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button autoHide="false" style="color: #ffffff">
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-icon name="arrow-back-outline" (click)="navigateToHome()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-row>
+</ion-header> 
 
 <ion-content [fullscreen]="true">
   <ion-card class="todays-tasks">
@@ -16,8 +23,11 @@
       <ion-card-title>
         <ion-row>
           <ion-row>
-            <ion-icon name="list-outline"></ion-icon>
-            Subjects
+            <ion-icon
+              name="list-outline"
+              style="margin-top: calc(0.3vh)"
+            ></ion-icon>
+            <span style="margin-left: calc(0.7vh)">Matérias</span>
           </ion-row>
           <ion-icon name="create-outline"></ion-icon>
         </ion-row>
@@ -26,24 +36,28 @@
 
     <ion-card-content class="todays-tasks-content">
       <ion-card class="item-card" (click)="navigateToSelectedSubject()">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-        </ion-card-content>
+        <ion-card-title class="item-card-title">
+          Matéria 1
+        </ion-card-title>
+        <ion-card-content class="item-card-content"> </ion-card-content>
       </ion-card>
       <ion-card class="item-card" (click)="navigateToSelectedSubject()">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-        </ion-card-content>
+        <ion-card-title class="item-card-title">
+          Matéria 2
+        </ion-card-title>
+        <ion-card-content class="item-card-content"> </ion-card-content>
       </ion-card>
       <ion-card class="item-card" (click)="navigateToSelectedSubject()">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-        </ion-card-content>
+        <ion-card-title class="item-card-title">
+          Matéria 3
+        </ion-card-title>
+        <ion-card-content class="item-card-content"> </ion-card-content>
       </ion-card>
       <ion-card class="item-card" (click)="navigateToSelectedSubject()">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-        </ion-card-content>
+        <ion-card-title class="item-card-title">
+          Matéria 4
+        </ion-card-title>
+        <ion-card-content class="item-card-content"> </ion-card-content>
       </ion-card>
     </ion-card-content>
   </ion-card>
