@@ -1,5 +1,9 @@
 ion-content {
-  --background: url('../../../assets/image/home.png') no-repeat center center / cover !important;
+  --background: url("/assets/image/home.png") no-repeat center center /
+    cover !important;
+  --overflow: hidden;
+  --scroll-y: "false";
+  
 }
 
 ion-toolbar {
@@ -23,6 +27,7 @@ ion-button {
 
 ion-item {
   --background: #999999;
+  margin-bottom: 10px;
   border-radius: 5px;
 }
 
@@ -62,4 +67,27 @@ ion-checkbox {
   font-weight: 100;
   color: #000000;
   padding: 2px;
+}
+
+span {
+  color: #000000;
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-bottom: calc(3vh);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+
+.card-principal {
+  margin-left: calc(1vh);
+  margin-right: calc(1vh);
+}
+
+.card-lista {
+  margin-bottom: calc(2vh);
 }
