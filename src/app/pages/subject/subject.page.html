@@ -1,62 +1,100 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>EASY</ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button autoHide="false" style="color: #FFFFFF"></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="start">
-      <ion-icon name="arrow-back-outline" (click)="navigateToMainSubjects()"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-header translucent>
+  <ion-row>
+    <ion-toolbar>
+      <ion-title mode="ios">
+        <h1>Ea<span>s</span>y</h1>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button autoHide="false" style="color: #ffffff">
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-icon
+          name="arrow-back-outline"
+          (click)="navigateToMainSubjects()"
+        ></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-row>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen>
   <ion-card class="todays-tasks">
     <ion-card-header class="todays-tasks-header">
       <ion-card-title>
         <ion-row>
           <ion-row>
-            <ion-icon name="list-outline"></ion-icon>
-            Database
+            <ion-icon
+              name="today-outline"
+              style="margin-top: calc(0.3vh)"
+            ></ion-icon>
+            <span style="margin-left: calc(0.7vh)">Nome da Matéria</span>
           </ion-row>
-          <ion-icon name="create-outline"></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content class="todays-tasks-content">
-      <ion-card class="item-card">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            19:00
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            19:00
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            19:00
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-title class="item-card-title">Project Management</ion-card-title>
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            19:00
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-    </ion-card-content>
+    <div class="ion-text-center card-principal">
+      <ion-row>
+        <ion-col>
+          <!-- TODO: ARRUMAR ESSE COMPONENTE, POIS DEPENDENDO DO TEXTO, A TELA QUEBRA. EXEMPLO: ESTATÍSTICA APLICADA AO DATA SCIENCE -->
+          <ion-card class="item-card card-lista">
+            <ion-row>
+              <ion-card-title class="item-card-title">
+                <ion-row> Project Management </ion-row>
+                <ion-row> 19:00 </ion-row>
+              </ion-card-title>
+              <ion-button fill="clear" class="icon-check">
+                <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card>
+          <ion-card class="item-card card-lista">
+            <ion-row>
+              <ion-card-title class="item-card-title">
+                <ion-row> Project Management </ion-row>
+                <ion-row> 19:00 </ion-row>
+              </ion-card-title>
+              <ion-button fill="clear" class="icon-check">
+                <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card>
+          <ion-card class="item-card card-lista">
+            <ion-row>
+              <ion-card-title class="item-card-title">
+                <ion-row> Project Management </ion-row>
+                <ion-row> 19:00 </ion-row>
+              </ion-card-title>
+              <ion-button fill="clear" class="icon-check">
+                <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card>
+          <ion-card class="item-card card-lista">
+            <ion-row>
+              <ion-card-title class="item-card-title">
+                <ion-row> Project Management </ion-row>
+                <ion-row> 19:00 </ion-row>
+              </ion-card-title>
+              <ion-button fill="clear" class="icon-cancelar">
+                <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card>
+          <ion-card class="item-card card-lista">
+            <ion-row>
+              <ion-card-title class="item-card-title">
+                <ion-row> Project Management </ion-row>
+                <ion-row> 19:00 </ion-row>
+              </ion-card-title>
+              <ion-button fill="clear" class="icon-cancelar">
+                <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-card>
 </ion-content>
