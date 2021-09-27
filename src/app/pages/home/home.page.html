@@ -28,108 +28,96 @@
     <ion-card-header class="todays-tasks-header">
       <ion-card-title>
         <ion-row>
-          <ion-row>
-            <ion-icon
-              name="today-outline"
-              style="margin-top: calc(0.3vh)"
-            ></ion-icon>
-            <span style="margin-left: calc(0.7vh)">Today's Task</span>
-          </ion-row>
+          <ion-col col-12>
+            <ion-item lines="none" style="--background: none">
+              <ion-card-title>
+                <span style="font-weight: normal !important; font-size: 25px"
+                  >TODAYS TASK</span
+                >
+              </ion-card-title>
+
+              <ion-buttons slot="start">
+                <ion-icon
+                  class="icon-toolbar"
+                  style="color: black; margin-left: -15px"
+                  name="calendar-number-outline"
+                ></ion-icon>
+              </ion-buttons>
+            </ion-item>
+          </ion-col>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
-    <!-- TODO: ARRUMAR ESSE COMPONENTE, POIS DEPENDENDO DO TEXTO, A TELA QUEBRA. EXEMPLO: ESTATÍSTICA APLICADA AO DATA SCIENCE -->
-    <div class="ion-text-center card-principal">
+    <ion-card-content class="todays-tasks-content">
       <ion-row>
-        <ion-col>
-          <ion-card class="item-card card-lista">
-            <ion-row>
-              <ion-card-title class="item-card-title">
-                Project Management
-              </ion-card-title>
-            </ion-row>
-            <ion-card-content class="item-card-content">
-              <ion-row>
-                19:00
-                <ion-checkbox mode="md"></ion-checkbox>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="item-card card-lista">
-            <ion-row>
-              <ion-card-title class="item-card-title">
-                Project Management
-              </ion-card-title>
-            </ion-row>
-            <ion-card-content class="item-card-content">
-              <ion-row>
-                19:00
-                <ion-checkbox mode="md"></ion-checkbox>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="item-card card-lista">
-            <ion-row>
-              <ion-card-title class="item-card-title">
-                Project Management
-              </ion-card-title>
-            </ion-row>
-            <ion-card-content class="item-card-content">
-              <ion-row>
-                19:00
-                <ion-checkbox mode="md"></ion-checkbox>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="item-card card-lista">
-            <ion-row>
-              <ion-card-title class="item-card-title">
-                Project Management
-              </ion-card-title>
-            </ion-row>
-            <ion-card-content class="item-card-content">
-              <ion-row>
-                19:00
-                <ion-checkbox mode="md"></ion-checkbox>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
+        <ion-col col-12>
+          <ion-item lines="none" style="--background: #ffffff">
+            <ion-card-title class="item-card-title">
+              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
+              <br />
+              <span style="font-weight: normal !important"> 19:00 - N2 </span>
+            </ion-card-title>
+            <ion-checkbox slot="end" mode="md"></ion-checkbox>
+          </ion-item>
         </ion-col>
       </ion-row>
-    </div>
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-item lines="none" style="--background: #ffffff">
+            <ion-card-title class="item-card-title">
+              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
+              <br />
+              <span style="font-weight: normal !important"> 19:00 - N2 </span>
+            </ion-card-title>
+            <ion-checkbox slot="end" mode="md"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-item lines="none" style="--background: #ffffff">
+            <ion-card-title class="item-card-title">
+              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
+              <br />
+              <span style="font-weight: normal !important"> 19:00 - N2 </span>
+            </ion-card-title>
+            <ion-checkbox slot="end" mode="md"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-item lines="none" style="--background: #ffffff">
+            <ion-card-title class="item-card-title">
+              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
+              <br />
+              <span style="font-weight: normal !important"> 19:00 - N2 </span>
+            </ion-card-title>
+            <ion-checkbox slot="end" mode="md"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
   </ion-card>
 
-  <!-- <ion-row>
-    <ion-col col-6>
+  <ion-row>
+    <ion-col col-12>
       <ion-button (click)="navigateToMainSubjects()">
-        <ion-icon slot="start" name="list-outline"></ion-icon>
-        <span style="font-weight: bold;"> MATÉRIAS </span>
+        <ion-icon slot="start" name="home" style="margin-left: 10px"></ion-icon>
+        <span style="font-weight: bold !important"> MATÉRIAS </span>
       </ion-button>
     </ion-col>
-    <ion-col col-6> 
-      <ion-button (click)="navigateToMainSubjects()">
-        <ion-icon slot="start" name="list-outline"></ion-icon>
-        <span style="font-weight: bold;"> CALENDAR </span>
-      </ion-button>
-    </ion-col>
-  </ion-row> -->
+  </ion-row>
 
   <ion-row>
-    <ion-col>
-      <ion-button (click)="navigateToMainSubjects()">
-        <ion-icon slot="start" name="list-outline"></ion-icon>
-        <span style="font-weight: bold"> MATÉRIAS </span>
-      </ion-button>
-    </ion-col>
-
-    <ion-col>
+    <ion-col col-12>
       <ion-button (click)="navigateToCalendar()">
         <ion-icon slot="start" name="calendar-outline"></ion-icon>
-        <span style="font-weight: bold"> CALENDAR </span>
+        <span style="font-weight: bold !important"> CALENDÁRIO </span>
       </ion-button>
     </ion-col>
   </ion-row>

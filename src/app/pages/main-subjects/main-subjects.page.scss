@@ -35,6 +35,10 @@ ion-item {
   border-radius: 5px;
 }
 
+ion-icon {
+  font-size: calc(4vh) !important;
+}
+
 ion-row {
   justify-content: space-between;
 }
@@ -87,6 +91,6 @@ h1 {
   font-weight: bold;
 }
 
-.icon-toolbar{
+.icon-toolbar {
   font-size: calc(4vh);
 }

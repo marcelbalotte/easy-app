@@ -33,6 +33,10 @@ ion-checkbox {
   --border-color-checked: #000000;
 }
 
+ion-icon {
+  font-size: calc(4vh) !important;
+}
+
 .todays-tasks {
   padding: 0px;
   margin: 20px;
@@ -87,16 +91,16 @@ h1 {
   color: #20c710;
   font-size: calc(3.3vh);
   margin-right: -25px;
-  margin-top: calc(-0.5vh)
+  margin-top: calc(-0.5vh);
 }
 
 .icon-cancelar {
   color: #c71010;
   font-size: calc(3.3vh);
   margin-right: -25px;
-  margin-top: calc(-0.5vh)
+  margin-top: calc(-0.5vh);
 }
 
-.icon-toolbar{
+.icon-toolbar {
   font-size: calc(4vh);
 }

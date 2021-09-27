@@ -7,11 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-subjects.page.scss'],
 })
 export class MainSubjectsPage implements OnInit {
+  constructor(private route: Router) {}
 
-  constructor(private route: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   navigateToHome() {
     this.route.navigate(['/home']);
