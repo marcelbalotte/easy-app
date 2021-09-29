@@ -37,6 +37,10 @@ ion-icon {
   font-size: calc(4vh) !important;
 }
 
+ion-col {
+  display: block;
+}
+
 .todays-tasks {
   padding: 0px;
   margin: 20px;
@@ -53,7 +57,7 @@ ion-icon {
 
 .item-card {
   background-color: #ffffff;
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   margin: 10px 0px 0px 0px;
 }
 
@@ -103,4 +107,12 @@ h1 {
 
 .icon-toolbar {
   font-size: calc(4vh);
+}
+
+.activity {
+  font-size: 20px;
+}
+
+.icon-center {
+  margin-top: calc(2vh);
 }

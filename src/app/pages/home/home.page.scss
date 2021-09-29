@@ -19,10 +19,15 @@ ion-card-title {
 }
 
 ion-button {
-  --background: #38C5C5;
+  --background: #38c5c5;
+  --border-radius: 5px;
+  --background-activated: #27b4b4;
+  --background-focused: #16a3a3;
+  --color-activated: #ffffff;
+  --color-focused: #ffffff;
+  font-size: 20px;
+  width: 90%;
   color: #000000;
-  display: block;
-  margin: 20px;
 }
 
 ion-item {
@@ -68,8 +73,8 @@ ion-checkbox {
 }
 
 .item-card {
-  background-color: #FFFFFF;
-  padding: 10px;
+  background-color: #ffffff;
+  padding: 5px 15px 5px 10px;
   margin: 10px 0px 0px 0px;
 }
 
@@ -77,7 +82,7 @@ ion-checkbox {
   font-size: 20px;
   font-weight: 100;
   color: #000000;
-  padding: 2px;
+  padding: 0px;
 }
 
 span {
@@ -86,11 +91,10 @@ span {
 }
 
 h1 {
-  text-transform: uppercase;
   font-size: 25px;
   margin-bottom: calc(3vh);
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 
@@ -105,4 +109,12 @@ h1 {
 
 .icon-toolbar{
   font-size: calc(4vh);
+}
+
+.activity {
+  font-size: 20px;
+}
+
+.icon-center {
+  margin-top: calc(3.3vh);
 }

@@ -5,117 +5,73 @@
         <h1>Ea<span>s</span>y</h1>
       </ion-title>
       <ion-buttons slot="start">
-        <ion-icon class="icon-toolbar"  name="arrow-back-outline" (click)="navigateToMainSubjects()"></ion-icon>
+        <ion-icon class="icon-toolbar" name="arrow-back-outline" (click)="navigateToMainSubjects()"></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-row>
-</ion-header> 
+</ion-header>
 
 <ion-content fullscreen>
   <ion-card class="todays-tasks">
     <ion-card-header class="todays-tasks-header">
       <ion-card-title>
         <ion-row>
-          <ion-col col-12>
-            <ion-item lines="none" style="--background: none">
-              <ion-card-title>
-                <span style="font-weight: normal !important; font-size: 25px"
-                  >ESTATÍSTICA APLICADA AO DATA SCIENCE</span
-                >
-              </ion-card-title>
-
-              <ion-buttons slot="end">
-                <ion-icon
-                  class="icon-toolbar"
-                  name="pencil-outline"
-                  style="color: black; margin-right: -20px"
-                  name="pencil-outline"
-                ></ion-icon>
-              </ion-buttons>
-            </ion-item>
-          </ion-col>
+          <ion-row>
+            <span style="
+                margin-left: calc(0.7vh);
+                font-weight: normal !important;
+                font-size: 25px;">{{pageTitle}}</span>
+          </ion-row>
+          <ion-icon name="add-outline" style="color: #ffffff;"></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="todays-tasks-content">
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title">
-              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
-              <br />
-              <span style="font-weight: normal !important"> 19:00 - N2 </span>
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon
-                class="icon-toolbar"
-                name="checkmark-outline"
-                style="color: black; margin-right: 5px"
-                name="checkmark-outline"
-              ></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title">
-              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
-              <br />
-              <span style="font-weight: normal !important"> 19:00 - N2 </span>
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon
-                class="icon-toolbar"
-                name="checkmark-outline"
-                style="color: black; margin-right: 5px"
-                name="checkmark-outline"
-              ></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title">
-              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
-              <br />
-              <span style="font-weight: normal !important"> 19:00 - N2 </span>
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon
-                class="icon-toolbar"
-                name="close-outline"
-                style="color: black; margin-right: 5px"
-              ></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title">
-              <span style="font-weight: normal !important"> ATIVIDADE 1 </span>
-              <br />
-              <span style="font-weight: normal !important"> 19:00 - N2 </span>
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon
-                class="icon-toolbar"
-                name="close-outline"
-                style="color: black; margin-right: 5px"
-              ></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+      <ion-card class="item-card">
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            <ion-col>
+              <p class="activity">Atividade 1</p>
+              <p class="activity">29/09/2021 - 23:59</p>
+            </ion-col>
+            <ion-icon name="checkmark-outline" class="icon-center"></ion-icon>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            <ion-col>
+              <p class="activity">Atividade 1</p>
+              <p class="activity">29/09/2021 - 23:59</p>
+            </ion-col>
+            <ion-icon name="checkmark-outline" class="icon-center"></ion-icon>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            <ion-col>
+              <p class="activity">Atividade 1</p>
+              <p class="activity">29/09/2021 - 23:59</p>
+            </ion-col>
+            <ion-icon name="close-outline" class="icon-center"></ion-icon>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="item-card">
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            <ion-col>
+              <p class="activity">Atividade 1</p>
+              <p class="activity">29/09/2021 - 23:59</p>
+            </ion-col>
+            <ion-icon name="close-outline" class="icon-center"></ion-icon>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
     </ion-card-content>
   </ion-card>
 </ion-content>

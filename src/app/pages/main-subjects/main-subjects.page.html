@@ -5,11 +5,11 @@
         <h1>Ea<span>s</span>y</h1>
       </ion-title>
       <ion-buttons slot="start">
-        <ion-icon class="icon-toolbar"  name="arrow-back-outline" (click)="navigateToHome()"></ion-icon>
+        <ion-icon class="icon-toolbar" name="arrow-back-outline" (click)="navigateToHome()"></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-row>
-</ion-header> 
+</ion-header>
 
 <ion-content fullscreen>
   <ion-card class="todays-tasks">
@@ -21,59 +21,25 @@
             <span style="
                 margin-left: calc(0.7vh);
                 font-weight: normal !important;
-                font-size: 24px;
-              ">MATÉRIAS</span>
+                font-size: 25px;">Matérias</span>
           </ion-row>
-          <ion-icon name="add-outline"></ion-icon>
+          <ion-icon name="add-outline" style="color: #ffffff;"></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content class="todays-tasks-content">
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title" (click)="navigateToSelectedSubject()">
-              ESTATÍSTICA APLICADA AO DATA SCIENCE
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon class="icon-toolbar" name="pencil-outline" style="color: black; margin-right: 5px"
-                (click)="navigateToHome()"></ion-icon>
-              <ion-icon class="icon-toolbar" name="trash-outline" style="color: black; margin-right: -16px"></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title" (click)="navigateToSelectedSubject()">
-              FUNDAMENTOS PARA CERTIFICAÇÃO TÉCNICA
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon class="icon-toolbar" name="pencil-outline" style="color: black; margin-right: 5px"
-                (click)="navigateToHome()"></ion-icon>
-              <ion-icon class="icon-toolbar" name="trash-outline" style="color: black; margin-right: -16px"></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title" (click)="navigateToSelectedSubject()">
-              ENGENHARIA DE SOFTWARE
-            </ion-card-title>
-            <ion-buttons slot="end">
-              <ion-icon class="icon-toolbar" name="pencil-outline" style="color: black; margin-right: 5px"
-                (click)="navigateToHome()"></ion-icon>
-              <ion-icon class="icon-toolbar" name="trash-outline" style="color: black; margin-right: -16px"></ion-icon>
-            </ion-buttons>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+    <ion-card-content *ngFor="let subject of subjects" class="todays-tasks-content">
+      <ion-card class="item-card" (click)="navigateToSelectedSubject(subject)">
+        <ion-card-content class="item-card-content">
+          <ion-row>
+            <ion-card-title class="item-card-title">{{subject}}</ion-card-title>
+            <ion-row>
+              <ion-icon name="create-outline"></ion-icon>
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-row>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
     </ion-card-content>
   </ion-card>
 </ion-content>

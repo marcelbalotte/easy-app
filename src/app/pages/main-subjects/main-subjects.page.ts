@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-main-subjects',
@@ -7,15 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-subjects.page.scss'],
 })
 export class MainSubjectsPage implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
-  ngOnInit() {}
+  subjects = ["Dispositivos Móveis", "Banco de Dados", "Gestão de Projetos"];
+
+  ngOnInit() { }
 
   navigateToHome() {
     this.route.navigate(['/home']);
   }
 
-  navigateToSelectedSubject() {
-    this.route.navigate(['/subject']);
+  navigateToSelectedSubject(subject) {
+    navigationExtras.state.pageTitle = subject; 
+    this.route.navigate(['/subject'], navigationExtras);
   }
 }
+
+const navigationExtras: NavigationExtras = {
+  state: {
+    pageTitle: '',
+  }
+};

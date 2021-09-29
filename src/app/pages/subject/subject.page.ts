@@ -7,8 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./subject.page.scss'],
 })
 export class SubjectPage implements OnInit {
+  pageTitle: string;
 
-  constructor(private route: Router) { }
+  constructor(private route: Router) {
+    const navigation = this.route.getCurrentNavigation();
+    const state = navigation.extras.state as {
+      pageTitle: string,
+    };
+    this.pageTitle = state.pageTitle;
+  }
 
   ngOnInit() {
   }
