@@ -9,7 +9,8 @@ import { Router, NavigationExtras } from '@angular/router';
 export class MainSubjectsPage implements OnInit {
   constructor(private route: Router) { }
 
-  subjects = ["Dispositivos Móveis", "Banco de Dados", "Gestão de Projetos"];
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  subjects = ['Dispositivos Móveis', 'Banco de Dados', 'Gestão de Projetos'];
 
   ngOnInit() { }
 
@@ -17,8 +18,13 @@ export class MainSubjectsPage implements OnInit {
     this.route.navigate(['/home']);
   }
 
+
+  navigateToRegisterSubject(){
+    this.route.navigate(['/register-subjects']);
+  }
+
   navigateToSelectedSubject(subject) {
-    navigationExtras.state.pageTitle = subject; 
+    navigationExtras.state.pageTitle = subject;
     this.route.navigate(['/subject'], navigationExtras);
   }
 }
@@ -27,4 +33,6 @@ const navigationExtras: NavigationExtras = {
   state: {
     pageTitle: '',
   }
+
+
 };

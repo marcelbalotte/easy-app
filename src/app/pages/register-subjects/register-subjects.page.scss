@@ -1,0 +1,110 @@
+ion-content {
+  --background: url("/assets/image/registerSubject.jpeg") no-repeat center center / cover !important;
+  --overflow: hidden;
+  --scroll-y: "false";
+}
+
+ion-toolbar {
+  --background: #38c5c5;
+}
+
+ion-card {
+  --background: #38c5c5;
+}
+
+ion-card-title {
+  --color: #000000;
+}
+
+ion-button {
+  --background: #38c5c5;
+  --border-radius: 5px;
+  --background-activated: #27b4b4;
+  --background-focused: #16a3a3;
+  --color-activated: #ffffff;
+  --color-focused: #ffffff;
+  margin-top: -5%;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+}
+
+ion-item {
+  --background: #999999;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+ion-icon {
+  font-size: calc(4vh) !important;
+}
+
+ion-row {
+  justify-content: space-between;
+}
+
+ion-checkbox {
+  --background: #ffffff;
+  --border-color: #000000;
+  --background-checked: #000000;
+  --border-color-checked: #000000;
+}
+
+.todays-tasks {
+  padding: 0px;
+  margin: 15px;
+}
+
+.todays-tasks-header {
+  padding: 10px 5px 10px 10px;
+}
+
+
+
+.item-card {
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.item-card-title,
+.item-card-content {
+  font-size: 20px;
+  font-weight: 100;
+  color: #000000;
+  padding: 2px;
+}
+
+span {
+  color: #000000;
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-bottom: calc(3vh);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.icon-toolbar {
+  font-size: calc(4vh);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content2 {
+  display: flex;
+  justify-content:right;
+  align-items: center;
+
+}
+
+

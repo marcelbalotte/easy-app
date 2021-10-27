@@ -34,7 +34,15 @@ const routes: Routes = [
   {
     path: 'subject',
     loadChildren: () => import('./pages/subject/subject.module').then( m => m.SubjectPageModule)
+  },  {
+    path: 'register-subjects',
+    loadChildren: () => import('./pages/register-subjects/register-subjects.module').then( m => m.RegisterSubjectsPageModule)
   },
+  {
+    path: 'register-task',
+    loadChildren: () => import('./pages/register-task/register-task.module').then( m => m.RegisterTaskPageModule)
+  },
+
 
 
 ];
