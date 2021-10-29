@@ -13,8 +13,7 @@ export class RegisterTaskPage implements OnInit {
   ngOnInit() {
   }
 
-  navigateToHome() {
-    this.route.navigate(['/home']);
+  navigateToSubject() {
+    this.route.navigate(['/subject']);
   }
-
 }

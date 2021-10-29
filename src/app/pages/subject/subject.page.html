@@ -22,53 +22,20 @@
                 font-weight: normal !important;
                 font-size: 25px;">{{pageTitle}}</span>
           </ion-row>
-          <ion-icon name="add-outline" style="color: #ffffff;"></ion-icon>
+          <ion-icon name="add-outline" style="color: #ffffff;" (click)="navigateToRegisterTask()"></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="todays-tasks-content">
-      <ion-card class="item-card">
+      <ion-card *ngFor="let task of tasks" class="item-card">
         <ion-card-content class="item-card-content">
           <ion-row>
             <ion-col>
-              <p class="activity">Atividade 1</p>
+              <p class="activity">{{task}}</p>
               <p class="activity">29/09/2021 - 23:59</p>
             </ion-col>
             <ion-icon name="checkmark-outline" class="icon-center"></ion-icon>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Atividade 1</p>
-              <p class="activity">29/09/2021 - 23:59</p>
-            </ion-col>
-            <ion-icon name="checkmark-outline" class="icon-center"></ion-icon>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Atividade 1</p>
-              <p class="activity">29/09/2021 - 23:59</p>
-            </ion-col>
-            <ion-icon name="close-outline" class="icon-center"></ion-icon>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Atividade 1</p>
-              <p class="activity">29/09/2021 - 23:59</p>
-            </ion-col>
-            <ion-icon name="close-outline" class="icon-center"></ion-icon>
           </ion-row>
         </ion-card-content>
       </ion-card>

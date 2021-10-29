@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-subject',
@@ -8,8 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SubjectPage implements OnInit {
   pageTitle: string;
+  tasks;
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private taskService: TaskService) {
     const navigation = this.route.getCurrentNavigation();
     const state = navigation.extras.state as {
       pageTitle: string,
@@ -18,6 +20,11 @@ export class SubjectPage implements OnInit {
   }
 
   ngOnInit() {
+    this.tasks = this.taskService.getTaskBySubject();
+  }
+
+  navigateToRegisterTask() {
+    this.route.navigate(['/register-task']);
   }
 
   navigateToMainSubjects() {

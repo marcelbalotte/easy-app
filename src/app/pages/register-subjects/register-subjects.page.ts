@@ -13,9 +13,7 @@ export class RegisterSubjectsPage implements OnInit {
   ngOnInit() {
   }
 
-
-  navigateToHome() {
-    this.route.navigate(['/home']);
+  navigateToMainSubjects() {
+    this.route.navigate(['/main-subjects']);
   }
-
 }

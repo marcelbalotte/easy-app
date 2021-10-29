@@ -93,44 +93,11 @@
     </ion-card-header>
 
     <ion-card-content class="todays-tasks-content">
-      <ion-card class="item-card">
+      <ion-card *ngFor="let task of todaysTasksList" class="item-card">
         <ion-card-content class="item-card-content">
           <ion-row>
             <ion-col>
-              <p class="activity">Project Management</p>
-              <p class="activity">19:00</p>
-            </ion-col>
-            <ion-checkbox mode="md" class="icon-center"></ion-checkbox>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Project Management</p>
-              <p class="activity">19:00</p>
-            </ion-col>
-            <ion-checkbox mode="md" class="icon-center"></ion-checkbox>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Project Management</p>
-              <p class="activity">19:00</p>
-            </ion-col>
-            <ion-checkbox mode="md" class="icon-center"></ion-checkbox>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-      <ion-card class="item-card">
-        <ion-card-content class="item-card-content">
-          <ion-row>
-            <ion-col>
-              <p class="activity">Project Management</p>
+              <p class="activity">{{task.name}}</p>
               <p class="activity">19:00</p>
             </ion-col>
             <ion-checkbox mode="md" class="icon-center"></ion-checkbox>
@@ -142,16 +109,10 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col col-6>
+      <ion-col col-12>
         <ion-button type="button" (click)="navigateToMainSubjects()" style="margin-left: 15px;">
           <ion-icon name="list-outline"></ion-icon>
           <p style="margin-left: 8px;">Subjects</p>
-        </ion-button>
-      </ion-col>
-      <ion-col col-6>
-        <ion-button type="button" (click)="navigateToCalendar()">
-          <ion-icon name="calendar-outline"></ion-icon>
-          <p style="margin-left: 8px;">Calendar</p>
         </ion-button>
       </ion-col>
     </ion-row>

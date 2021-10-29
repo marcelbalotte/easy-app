@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+import { SubjectService } from 'src/app/services/subject.service';
 
 @Component({
   selector: 'app-main-subjects',
@@ -7,12 +8,14 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./main-subjects.page.scss'],
 })
 export class MainSubjectsPage implements OnInit {
-  constructor(private route: Router) { }
+  constructor(private route: Router, private subjectService: SubjectService) { }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  subjects = ['Dispositivos Móveis', 'Banco de Dados', 'Gestão de Projetos'];
+  subjects;
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.subjects = this.subjectService.getSubjects();
+  }
 
   navigateToHome() {
     this.route.navigate(['/home']);
