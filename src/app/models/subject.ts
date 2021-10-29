@@ -2,6 +2,6 @@ class Subject {
     id: number;
     name: string;
     tutorName: string;
-    task: Atividade[];
+    task: Task[];
     calendar: Calendar[];
 }
