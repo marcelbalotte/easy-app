@@ -24,17 +24,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
-    path: 'calendar',
-    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
-  },
-  {
     path: 'main-subjects',
     loadChildren: () => import('./pages/main-subjects/main-subjects.module').then( m => m.MainSubjectsPageModule)
   },
   {
     path: 'subject',
     loadChildren: () => import('./pages/subject/subject.module').then( m => m.SubjectPageModule)
-  },  {
+  },
+  {
     path: 'register-subjects',
     loadChildren: () => import('./pages/register-subjects/register-subjects.module').then( m => m.RegisterSubjectsPageModule)
   },
