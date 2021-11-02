@@ -1,4 +1,3 @@
-
 <ion-header translucent>
   <ion-row>
     <ion-toolbar>
@@ -16,14 +15,12 @@
   <ion-card class="content">
     <ion-card-header class="todays-tasks-header">
       <ion-card-title>
-        <ion-row >
-
-         <ion-text class="content">Cadastro de Matérias</ion-text>
-          </ion-row>
+        <ion-row>
+          <span style="font-weight: normal !important; font-size: 25px;">Cadastro de matérias</span>
+        </ion-row>
       </ion-card-title>
     </ion-card-header>
   </ion-card>
-
 
   <div class="content">
     <div class="ion-text-center">
@@ -40,21 +37,18 @@
           </ion-item>
 
           <ion-item lines="none">
-            <ion-icon name="time-outline" slot="start"></ion-icon>
-            <ion-input type="text" placeholder="Type the class hour"></ion-input>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-datetime displayFormat="D MMM YYYY H:mm" min="2021" placeholder="Select date and hour"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
-    <div class="content2">
-      <ion-row >
-        <ion-col>
-          <ion-button small > REGISTER </ion-button>
-        </ion-col>
-      </ion-row>
+      <div class="content2">
+        <ion-row>
+          <ion-col>
+            <ion-button small> REGISTER </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
     </div>
-    </div>
-
-
   </div>
 </ion-content>
-
