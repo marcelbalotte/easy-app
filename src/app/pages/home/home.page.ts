@@ -9,12 +9,12 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  todaysTasksList: Task[];
+  todaysTasksList: any;
 
   constructor(private route: Router, public taskService: TaskService,) { }
   
   ngOnInit() {
-    this.todaysTasksList = this.taskService.getTodaysTasks()
+    this.listarTaskdDiarias(1);
   }
 
   navigateToMainSubjects() {
@@ -27,5 +27,12 @@ export class HomePage {
 
   navigateToLogin() {
     this.route.navigate(['/login']);
+  }
+
+  listarTaskdDiarias(idUsuario: number) {
+    return this.taskService.listarDiarias(idUsuario)
+    .then((response) => {
+      this.todaysTasksList = response;
+    });
   }
 }

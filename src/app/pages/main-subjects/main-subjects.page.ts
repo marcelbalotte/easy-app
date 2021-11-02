@@ -1,41 +1,46 @@
+import { Subject } from './../../models/subject.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { SubjectService } from 'src/app/services/subject.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+
+const navigationExtras: NavigationExtras = {
+  state: {
+    subject:[]
+  },
+};
 
 @Component({
   selector: 'app-main-subjects',
   templateUrl: './main-subjects.page.html',
-  styleUrls: ['./main-subjects.page.scss'],
+  styleUrls: ['./main-subjects.page.scss']
 })
 export class MainSubjectsPage implements OnInit {
-  constructor(private route: Router, private subjectService: SubjectService) { }
+  constructor(private route: Router, private subjectService: SubjectService) {}
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  subjects;
+  subjects:any;
 
   ngOnInit() {
-    this.subjects = this.subjectService.getSubjects();
+    this.listarSubjects(1);
   }
 
   navigateToHome() {
     this.route.navigate(['/home']);
   }
 
-
-  navigateToRegisterSubject(){
+  navigateToRegisterSubject() {
     this.route.navigate(['/register-subjects']);
   }
 
   navigateToSelectedSubject(subject) {
-    navigationExtras.state.pageTitle = subject;
+    navigationExtras.state.subject = subject;
     this.route.navigate(['/subject'], navigationExtras);
   }
-}
 
-const navigationExtras: NavigationExtras = {
-  state: {
-    pageTitle: '',
+  listarSubjects(idUsuario: number) {
+    return this.subjectService.listarTodos(idUsuario)
+    .then((response) => {
+      this.subjects = response;
+    });
   }
-
-
-};
+}

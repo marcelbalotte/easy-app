@@ -9,18 +9,22 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class SubjectPage implements OnInit {
   pageTitle: string;
-  tasks;
+  idSubject:number;
+  tasks:any;
 
   constructor(private route: Router, private taskService: TaskService) {
     const navigation = this.route.getCurrentNavigation();
+
     const state = navigation.extras.state as {
-      pageTitle: string,
+      subject: any;
     };
-    this.pageTitle = state.pageTitle;
+
+    this.pageTitle = state.subject.nome;
+    this.idSubject = state.subject.id;
   }
 
   ngOnInit() {
-    this.tasks = this.taskService.getTaskBySubject();
+    this.listarTask(this.idSubject, 1);
   }
 
   navigateToRegisterTask() {
@@ -29,5 +33,12 @@ export class SubjectPage implements OnInit {
 
   navigateToMainSubjects() {
     this.route.navigate(['/main-subjects']);
+  }
+
+  listarTask(idMateria: number, idUsuario: number) {
+    return this.taskService.listarPorMateria(idUsuario, idMateria)
+    .then((response) => {
+      this.tasks = response;
+    });
   }
 }

@@ -1,16 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../models/task.model';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
-  getTodaysTasks() {
-    return [new Task(1, "Prova N2", []), new Task(1, "APS", []), new Task(1, "Bater no coleguinha", [])];
+
+  url: string = 'http://localhost:8081/api';
+
+  constructor(private http: HttpClient) {}
+
+  async listarPorMateria(id: number, idMateria: number): Promise<any> {
+    return this.http
+      .get(`${this.url}/atividades/materia?id_materia=${idMateria}&id_usuario=${id}`)
+      .toPromise()
+      .then((response) => {
+        return response;
+      });
   }
 
-  getTaskBySubject() {
-    return ['APS', 'Lista de exercícios', 'Xingar o amiguinho', 'N1'];
+  async listarDiarias(id: number): Promise<any> {
+    return this.http
+      .get(`${this.url}/atividades/atividades_do_dia?id_usuario=${id}`)
+      .toPromise()
+      .then((response) => {
+        return response;
+      });
   }
-
-  constructor() { }
 }
