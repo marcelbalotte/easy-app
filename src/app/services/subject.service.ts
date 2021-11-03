@@ -12,17 +12,17 @@ export class SubjectService {
 
   constructor(private http: HttpClient) {}
 
-  async listarTodos(id: number): Promise<any> {
+  async listarTodos(id: number): Promise<Subject> {
     return this.http
-      .get(`${this.url}/materias?id_usuario=${id}`)
+      .get<Subject>(`${this.url}/materias?id_usuario=${id}`)
       .toPromise()
       .then((response) => {
         return response;
       });
   }
 
-  async cadastrar(materia: Subject): Promise<any> {
-    this.http
+  async cadastrar(materia: Subject): Promise<Subject> {
+    return this.http
       .post<Subject>(`${this.url}/materias`, materia)
       .toPromise()
       .then((response) => {
@@ -30,8 +30,8 @@ export class SubjectService {
       });
   }
 
-  async atualizar(materia: Subject): Promise<any> {
-    this.http
+  async atualizar(materia: Subject): Promise<Subject> {
+    return this.http
       .put<Subject>(`${this.url}/materias`, materia)
       .toPromise()
       .then((response) => {

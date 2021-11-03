@@ -14,7 +14,7 @@ export class HomePage {
   constructor(private route: Router, public taskService: TaskService,) { }
   
   ngOnInit() {
-    this.listarTaskdDiarias(1);
+    this.listarTaskDiarias(1);
   }
 
   navigateToMainSubjects() {
@@ -29,7 +29,7 @@ export class HomePage {
     this.route.navigate(['/login']);
   }
 
-  listarTaskdDiarias(idUsuario: number) {
+  listarTaskDiarias(idUsuario: number) {
     return this.taskService.listarDiarias(idUsuario)
     .then((response) => {
       this.todaysTasksList = response;

@@ -11,18 +11,18 @@ export class TaskService {
 
   constructor(private http: HttpClient) {}
 
-  async listarPorMateria(id: number, idMateria: number): Promise<any> {
+  async listarPorMateria(id: number, idMateria: number): Promise<Task> {
     return this.http
-      .get(`${this.url}/atividades/materia?id_materia=${idMateria}&id_usuario=${id}`)
+      .get<Task>(`${this.url}/atividades/materia?id_materia=${idMateria}&id_usuario=${id}`)
       .toPromise()
       .then((response) => {
         return response;
       });
   }
 
-  async listarDiarias(id: number): Promise<any> {
+  async listarDiarias(id: number): Promise<Task> {
     return this.http
-      .get(`${this.url}/atividades/atividades_do_dia?id_usuario=${id}`)
+      .get<Task>(`${this.url}/atividades/atividades_do_dia?id_usuario=${id}`)
       .toPromise()
       .then((response) => {
         return response;
