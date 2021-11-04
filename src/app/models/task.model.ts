@@ -1,13 +1,10 @@
-import { Calendar } from "./calendar.model";
+import { Subject } from './subject.model';
+import { User } from './user.model';
 
 export class Task {
-    id: number;
-    name: string;
-    calendar: Calendar[];
-
-    constructor(id:number, name: string, calendar: Calendar[]) { 
-        this.id = id;
-        this.name = name;
-        this.calendar = calendar;
-    } 
+  id: number;
+  nome: string;
+  data: string;
+  user: User;
+  materia: Subject;
 }

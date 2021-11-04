@@ -28,19 +28,19 @@
         <ion-col col-8>
           <ion-item lines="none">
             <ion-icon name="reader-outline" slot="start"></ion-icon>
-            <ion-input [(ngModel)]="materiaCadastro.nameSubject" type="text" placeholder="Digite o nome da matéria"></ion-input>
+            <ion-input [(ngModel)]="materiaCadastro.nome" type="text" placeholder="Digite o nome da matéria"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
             <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-datetime [(ngModel)]="materiaCadastro.dateSubject" displayFormat="D MMM YYYY" min="2021" placeholder="Selecione a data"></ion-datetime>
+            <ion-datetime [(ngModel)]="materiaCadastro.data" displayFormat="DD MMM YYYY" min="2021" placeholder="Selecione a data"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
       <div class="content2">
         <ion-row>
           <ion-col>
-            <ion-button small (click)="salvarSubject(materiaCadastro)"> REGISTER </ion-button>
+            <ion-button small (click)="salvarSubject()"> REGISTRAR </ion-button>
           </ion-col>
         </ion-row>
       </div>

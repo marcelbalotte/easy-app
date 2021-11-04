@@ -28,22 +28,23 @@
         <ion-col col-8>
           <ion-item lines="none">
             <ion-icon name="reader-outline" slot="start"></ion-icon>
-            <ion-input type="text" placeholder="Subject "></ion-input>
+            <ion-input type="text" placeholder="Matéria" disabled></ion-input>
           </ion-item>
           <ion-item lines="none">
             <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
-            <ion-input type="text" placeholder="Type the task"></ion-input>
+            <ion-input [(ngModel)]="taskCadastro.nome" type="text" placeholder="Nome Atividade"></ion-input>
+
           </ion-item>
           <ion-item lines="none">
             <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-datetime displayFormat="D MMM YYYY H:mm" min="2021" placeholder="Select date and hour"></ion-datetime>
+            <ion-datetime [(ngModel)]="taskCadastro.data" displayFormat="D MMM YYYY H:mm" min="2021" placeholder="Selecione a data"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
       <div class="content2">
         <ion-row>
           <ion-col>
-            <ion-button small> REGISTER </ion-button>
+            <ion-button small (click)="salvarTask()" > REGISTRAR </ion-button>
           </ion-col>
         </ion-row>
       </div>
