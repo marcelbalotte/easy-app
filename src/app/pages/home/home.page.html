@@ -1,71 +1,3 @@
-<!-- <ion-header translucent>
-  <ion-row>
-    <ion-toolbar>
-      <ion-title mode="ios">
-        <h1>Ea<span>s</span>y</h1>
-      </ion-title>
-      <ion-buttons slot="end">
-        <ion-icon class="icon-toolbar" name="log-out-outline" (click)="navigateToLogin()"></ion-icon>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-row>
-</ion-header>
-
-<ion-content fullscreen>
-  <ion-card class="todays-tasks">
-    <ion-card-header class="todays-tasks-header">
-      <ion-card-title>
-        <ion-row>
-          <ion-col col-12>
-            <ion-item lines="none" style="--background: none">
-              <ion-card-title>
-                <span style="font-weight: bold !important; font-size: 25px">Today's tasks</span>
-              </ion-card-title>
-
-              <ion-buttons slot="start">
-                <ion-icon class="icon-toolbar" style="color: black; margin-left: -15px" name="calendar-number-outline">
-                </ion-icon>
-              </ion-buttons>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content class="todays-tasks-content">
-      <ion-row>
-        <ion-col col-12>
-          <ion-item lines="none" style="--background: #ffffff">
-            <ion-card-title class="item-card-title">
-              <span style="font-weight: normal !important"> Atividade 1 </span>          
-              <span style="font-weight: normal !important"> 19:00 - N2 </span>
-            </ion-card-title>
-            <ion-checkbox slot="end" mode="md"></ion-checkbox>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-row>
-    <ion-col col-12>
-      <ion-button (click)="navigateToMainSubjects()">
-        <ion-icon slot="start" name="home" style="margin-left: 10px"></ion-icon>
-        <span style="font-weight: bold !important"> MATÉRIAS </span>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col col-12>
-      <ion-button (click)="navigateToCalendar()">
-        <ion-icon slot="start" name="calendar-outline"></ion-icon>
-        <span style="font-weight: bold !important"> CALENDÁRIO </span>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-</ion-content> -->
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title mode="ios">
@@ -82,7 +14,7 @@
     <ion-card-header class="todays-tasks-header">
       <ion-item lines="none" style="--background: none">
         <ion-card-title>
-          <span style="font-weight: normal !important; font-size: 25px;">Today's tasks</span>
+          <span style="font-weight: normal !important; font-size: 25px;">Matérias de hoje</span>
         </ion-card-title>
 
         <ion-buttons slot="start">
@@ -98,6 +30,7 @@
           <ion-row>
             <ion-col>
               <p class="activity">{{task.nome}}</p>
+              <p class="activity">{{task.nome}}</p>
               <p class="activity">{{task.data_atividade}}</p>
             </ion-col>
             <ion-checkbox mode="md" class="icon-center"></ion-checkbox>
@@ -112,7 +45,7 @@
       <ion-col col-12>
         <ion-button type="button" (click)="navigateToMainSubjects()" style="margin-left: 15px;">
           <ion-icon name="list-outline"></ion-icon>
-          <p style="margin-left: 8px;">Subjects</p>
+          <p style="margin-left: 8px;">Matérias</p>
         </ion-button>
       </ion-col>
     </ion-row>
