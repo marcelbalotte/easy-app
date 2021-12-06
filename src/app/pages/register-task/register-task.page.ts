@@ -36,7 +36,7 @@ export class RegisterTaskPage implements OnInit {
 
     this.taskCadastro.data = this.datePipe.transform(
       this.taskCadastro.data,
-      "yyyy-MM-dd'T'HH:mm:ss"
+      "dd-MM-yyyy'T'HH:mm:ss"
     );
 
     this.taskService.cadastrar(this.taskCadastro);
