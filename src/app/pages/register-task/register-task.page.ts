@@ -6,6 +6,12 @@ import { Router } from '@angular/router';
 import { Subject } from 'src/app/models/subject.model';
 import { User } from 'src/app/models/user.model';
 import { TmplAstElement } from '@angular/compiler';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-register-task',
@@ -14,12 +20,26 @@ import { TmplAstElement } from '@angular/compiler';
 })
 export class RegisterTaskPage implements OnInit {
   taskCadastro = new Task();
+  formTask: FormGroup;
 
   constructor(
     private route: Router,
     private datePipe: DatePipe,
-    private taskService: TaskService
-  ) {}
+    private taskService: TaskService,
+    private formBuilder: FormBuilder
+  ) {
+    this.formTask = this.formBuilder.group({
+      nomeAtividade: new FormControl(
+        '',
+        Validators.compose([Validators.required])
+      ),
+
+      dataAtividade: new FormControl(
+        '',
+        Validators.compose([Validators.required])
+      ),
+    });
+  }
 
   ngOnInit() {}
 
@@ -39,8 +59,12 @@ export class RegisterTaskPage implements OnInit {
       "dd-MM-yyyy'T'HH:mm:ss"
     );
 
-    this.taskService.cadastrar(this.taskCadastro);
-    
-    this.taskCadastro = new Task();
+    if (this.formTask.valid) {
+      alert('form is valid'); //TODO: TROCAR POR POPUP
+      this.taskService.cadastrar(this.taskCadastro);
+      this.taskCadastro = new Task();
+    } else {
+      alert('empty fields');
+    }
   }
 }

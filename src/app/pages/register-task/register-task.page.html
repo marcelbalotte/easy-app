@@ -23,27 +23,29 @@
     </ion-card-header>
   </ion-card>
   <div class="content">
-    <div class="ion-text-center">
-      <ion-row>
-        <ion-col col-8>
-          <ion-item lines="none">
-            <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
-            <ion-input [(ngModel)]="taskCadastro.nome" type="text" placeholder="Nome Atividade"></ion-input>
-
-          </ion-item>
-          <ion-item lines="none">
-            <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-datetime [(ngModel)]="taskCadastro.data" displayFormat="D MMM YYYY H:mm" min="2021"  monthShortNames='Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez' placeholder="Selecione a data"></ion-datetime>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <div class="content2">
+    <form [formGroup]="formTask">
+      <div class="ion-text-center">
         <ion-row>
-          <ion-col>
-            <ion-button small (click)="salvarTask()" > REGISTRAR </ion-button>
+          <ion-col col-8>
+            <ion-item lines="none">
+              <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+              <ion-input type="text" placeholder="Nome Atividade" formControlName="nomeAtividade" [(ngModel)]="taskCadastro.nome"></ion-input>
+
+            </ion-item>
+            <ion-item lines="none">
+              <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <ion-datetime [(ngModel)]="taskCadastro.data" displayFormat="D MMM YYYY H:mm" min="2021" monthShortNames='Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez' placeholder="Selecione a data" formControlName="dataAtividade"></ion-datetime>
+            </ion-item>
           </ion-col>
         </ion-row>
+        <div class="content2">
+          <ion-row>
+            <ion-col>
+              <ion-button small (click)="salvarTask()" > REGISTRAR </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 </ion-content>

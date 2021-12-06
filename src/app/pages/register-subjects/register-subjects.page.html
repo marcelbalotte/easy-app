@@ -23,17 +23,18 @@
   </ion-card>
 
   <div class="content">
+    <form [formGroup]="formSubject">
     <div class="ion-text-center">
       <ion-row>
         <ion-col col-8>
           <ion-item lines="none">
             <ion-icon name="reader-outline" slot="start"></ion-icon>
-            <ion-input [(ngModel)]="materiaCadastro.nome" type="text" placeholder="Digite o nome da matéria"></ion-input>
+            <ion-input formControlName="materiaNome" [(ngModel)]="materiaCadastro.nome" type="text" placeholder="Digite o nome da matéria"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
             <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-datetime [(ngModel)]="materiaCadastro.data" displayFormat="DD MMM YYYY" min="2021"  monthShortNames='Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez' placeholder="Selecione a data"></ion-datetime>
+            <ion-datetime formControlName="materiaData" [(ngModel)]="materiaCadastro.data" displayFormat="DD MMM YYYY" min="2021"  monthShortNames='Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez' placeholder="Selecione a data"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -45,5 +46,6 @@
         </ion-row>
       </div>
     </div>
+  </form>
   </div>
 </ion-content>
