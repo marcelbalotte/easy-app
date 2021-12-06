@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-subject',
@@ -12,8 +13,10 @@ export class SubjectPage implements OnInit {
   idSubject:number;
   tasks:any;
 
-  constructor(private route: Router, private taskService: TaskService) {
+  constructor(private route: Router, private taskService: TaskService, private datePipe: DatePipe) {
     const navigation = this.route.getCurrentNavigation();
+
+    //this.dataPagamentoFormatada = moment(this.pagamento.dataPagamento).utc().format('DD/MM/YYYY');
 
     const state = navigation.extras.state as {
       subject: any;
@@ -39,6 +42,13 @@ export class SubjectPage implements OnInit {
     return this.taskService.listarPorMateria(idUsuario, idMateria)
     .then((response) => {
       this.tasks = response;
+
+      this.tasks.forEach(element => {
+        element.data_atividade = this.datePipe.transform(
+          element.data_atividade,
+             "dd/MM/yyyy"
+           );
+      });
     });
   }
 }
