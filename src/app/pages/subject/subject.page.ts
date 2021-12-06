@@ -16,8 +16,6 @@ export class SubjectPage implements OnInit {
   constructor(private route: Router, private taskService: TaskService, private datePipe: DatePipe) {
     const navigation = this.route.getCurrentNavigation();
 
-    //this.dataPagamentoFormatada = moment(this.pagamento.dataPagamento).utc().format('DD/MM/YYYY');
-
     const state = navigation.extras.state as {
       subject: any;
     };

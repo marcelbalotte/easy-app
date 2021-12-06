@@ -9,12 +9,12 @@
           <ion-col col-12>
             <ion-item lines="none">
               <ion-icon name="person-outline" slot="start"></ion-icon>
-              <ion-input type="name" placeholder="login"></ion-input>
+              <ion-input [(ngModel)]="usuarioLogin.login" name="login" type="text" placeholder="login"></ion-input>
             </ion-item>
 
             <ion-item lines="none">
               <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-              <ion-input type="password" placeholder="senha"></ion-input>
+              <ion-input [(ngModel)]="usuarioLogin.senha" name="senha" type="text" placeholder="login"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
