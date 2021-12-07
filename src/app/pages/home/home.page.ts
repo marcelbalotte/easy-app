@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Task } from 'src/app/models/task.model';
 import { TaskService } from 'src/app/services/task.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,12 @@ import { TaskService } from 'src/app/services/task.service';
 export class HomePage {
   todaysTasksList: any;
 
-  constructor(private route: Router, public taskService: TaskService,) { }
-  
+  constructor(
+    private route: Router,
+    public taskService: TaskService,
+    private datePipe: DatePipe
+  ) {}
+
   ngOnInit() {
     this.listarTaskDiarias(1);
   }
@@ -30,9 +35,16 @@ export class HomePage {
   }
 
   listarTaskDiarias(idUsuario: number) {
-    return this.taskService.listarDiarias(idUsuario)
-    .then((response) => {
+    return this.taskService.listarDiarias(idUsuario).then((response) => {
       this.todaysTasksList = response;
+      if (response != null) {
+        this.todaysTasksList.forEach((element) => {
+          element.data_atividade = this.datePipe.transform(
+            element.data_atividade,
+            'dd/MM/yyyy'
+          );
+        });
+      }
     });
   }
 }

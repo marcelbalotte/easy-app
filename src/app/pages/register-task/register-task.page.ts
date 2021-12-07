@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'src/app/models/subject.model';
 import { User } from 'src/app/models/user.model';
-import { TmplAstElement } from '@angular/compiler';
+import { AlertController } from '@ionic/angular';
 import {
   FormGroup,
   FormBuilder,
@@ -21,12 +21,14 @@ import {
 export class RegisterTaskPage implements OnInit {
   taskCadastro = new Task();
   formTask: FormGroup;
+  datepipe: DatePipe = new DatePipe('en-US');
 
   constructor(
     private route: Router,
     private datePipe: DatePipe,
     private taskService: TaskService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public alertController: AlertController
   ) {
     this.formTask = this.formBuilder.group({
       nomeAtividade: new FormControl(
@@ -44,7 +46,11 @@ export class RegisterTaskPage implements OnInit {
   ngOnInit() {}
 
   navigateToSubject() {
-    this.route.navigate(['/subject']);
+    this.route
+    .navigateByUrl('/subject', { skipLocationChange: true })
+    .then(() => {
+      this.route.navigate(['/subject']);
+    });
   }
 
   salvarTask() {
@@ -56,15 +62,32 @@ export class RegisterTaskPage implements OnInit {
 
     this.taskCadastro.data = this.datePipe.transform(
       this.taskCadastro.data,
-      "dd-MM-yyyy'T'HH:mm:ss"
+      "yyyy-MM-dd'T'HH:mm:ss"
     );
 
     if (this.formTask.valid) {
-      alert('form is valid'); //TODO: TROCAR POR POPUP
-      this.taskService.cadastrar(this.taskCadastro);
+      this.taskService.cadastrar(this.taskCadastro)
+      .then(response =>{
+        if (response != null && response.id > 0) {
+          this.exibirAlerta('Atividade cadastrada com sucesso!');
+        } else {
+          this.exibirAlerta('Não foi possível cadastrar atividade!');
+        }
+      })
       this.taskCadastro = new Task();
     } else {
-      alert('empty fields');
+      this.exibirAlerta('Preencher todos os campos!');
     }
+  }
+
+  exibirAlerta(mensagem: string) {
+    this.alertController
+      .create({
+        message: mensagem,
+        buttons: ['OK'],
+      })
+      .then((res) => {
+        res.present();
+      });
   }
 }

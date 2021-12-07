@@ -2,6 +2,7 @@ import { User } from 'src/app/models/user.model';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import {
   FormBuilder,
   FormControl,
@@ -21,7 +22,8 @@ export class LoginPage implements OnInit {
   constructor(
     private route: Router,
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public alertController: AlertController
   ) {
     const navigation = this.route.getCurrentNavigation();
 
@@ -40,10 +42,9 @@ export class LoginPage implements OnInit {
 
   navigateToHome() {
     if (this.formLogin.valid) {
-      alert('form is valid'); //TODO: TROCAR POR POPUP
       this.fazerLogin();
     } else {
-      alert('empty fields');
+      this.exibirAlerta('Preencher todos os campos!');
     }
   }
 
@@ -53,6 +54,8 @@ export class LoginPage implements OnInit {
       .then((response) => {
         if (response != null) {
           this.route.navigate(['/home']);
+        } else {
+          this.exibirAlerta('Usuário não localizado!')
         }
       });
   }
@@ -63,5 +66,16 @@ export class LoginPage implements OnInit {
 
   navigateToForgotPassword() {
     this.route.navigate(['/forgot-password']);
+  }
+
+  exibirAlerta(mensagem: string) {
+    this.alertController
+      .create({
+        message: mensagem,
+        buttons: ['OK'],
+      })
+      .then((res) => {
+        res.present();
+      });
   }
 }

@@ -10,10 +10,14 @@ import { DatePipe } from '@angular/common';
 })
 export class SubjectPage implements OnInit {
   pageTitle: string;
-  idSubject:number;
-  tasks:any;
+  idSubject: number;
+  tasks: any;
 
-  constructor(private route: Router, private taskService: TaskService, private datePipe: DatePipe) {
+  constructor(
+    private route: Router,
+    private taskService: TaskService,
+    private datePipe: DatePipe
+  ) {
     const navigation = this.route.getCurrentNavigation();
 
     const state = navigation.extras.state as {
@@ -37,16 +41,19 @@ export class SubjectPage implements OnInit {
   }
 
   listarTask(idMateria: number, idUsuario: number) {
-    return this.taskService.listarPorMateria(idUsuario, idMateria)
-    .then((response) => {
-      this.tasks = response;
+    return this.taskService
+      .listarPorMateria(idUsuario, idMateria)
+      .then((response) => {
+        this.tasks = response;
 
-      this.tasks.forEach(element => {
-        element.data_atividade = this.datePipe.transform(
-          element.data_atividade,
-             "dd/MM/yyyy"
-           );
+        if (response != null) {
+          this.tasks.forEach((element) => {
+            element.data_atividade = this.datePipe.transform(
+              element.data_atividade,
+              'dd/MM/yyyy'
+            );
+          });
+        }
       });
-    });
   }
 }

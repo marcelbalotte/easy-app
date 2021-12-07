@@ -3,7 +3,8 @@ import { SubjectService } from './../../services/subject.service';
 import { Subject } from './../../models/subject.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatePipe } from '@angular/common';
+import { DatePipe, Location, LocationStrategy } from '@angular/common';
+import { AlertController, NavController } from '@ionic/angular';
 import {
   FormBuilder,
   FormControl,
@@ -25,7 +26,9 @@ export class RegisterSubjectsPage implements OnInit {
     private route: Router,
     private subjectService: SubjectService,
     private datePipe: DatePipe,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public alertController: AlertController,
+    private location: Location
   ) {
     this.formSubject = this.formBuilder.group({
       materiaNome: new FormControl(
@@ -43,7 +46,11 @@ export class RegisterSubjectsPage implements OnInit {
   ngOnInit() {}
 
   navigateToMainSubjects() {
-    this.route.navigate(['/main-subjects']);
+    this.route
+      .navigateByUrl('/main-subjects', { skipLocationChange: true })
+      .then(() => {
+        this.route.navigate(['/main-subjects']);
+      });
   }
 
   salvarSubject() {
@@ -56,11 +63,27 @@ export class RegisterSubjectsPage implements OnInit {
     );
 
     if (this.formSubject.valid) {
-      alert('form is valid'); //TODO: TROCAR POR POPUP
-      this.subjectService.cadastrar(this.materiaCadastro);
+      this.subjectService.cadastrar(this.materiaCadastro).then((response) => {
+        if (response != null && response.id > 0) {
+          this.exibirAlerta('Matéria cadastrada com sucesso!');
+        } else {
+          this.exibirAlerta('Não foi possível cadastrar matéria!');
+        }
+      });
       this.materiaCadastro = new Subject();
     } else {
-      alert('empty fields');
+      this.exibirAlerta('Preencher todos os campos!');
     }
+  }
+
+  exibirAlerta(mensagem: string) {
+    this.alertController
+      .create({
+        message: mensagem,
+        buttons: ['OK'],
+      })
+      .then((res) => {
+        res.present();
+      });
   }
 }
