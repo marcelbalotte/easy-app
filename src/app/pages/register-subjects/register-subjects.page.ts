@@ -3,8 +3,8 @@ import { SubjectService } from './../../services/subject.service';
 import { Subject } from './../../models/subject.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatePipe, Location, LocationStrategy } from '@angular/common';
-import { AlertController, NavController } from '@ionic/angular';
+import { DatePipe } from '@angular/common';
+import { AlertController } from '@ionic/angular';
 import {
   FormBuilder,
   FormControl,
@@ -27,8 +27,7 @@ export class RegisterSubjectsPage implements OnInit {
     private subjectService: SubjectService,
     private datePipe: DatePipe,
     private formBuilder: FormBuilder,
-    public alertController: AlertController,
-    private location: Location
+    public alertController: AlertController
   ) {
     this.formSubject = this.formBuilder.group({
       materiaNome: new FormControl(
@@ -49,7 +48,14 @@ export class RegisterSubjectsPage implements OnInit {
     this.route
       .navigateByUrl('/main-subjects', { skipLocationChange: true })
       .then(() => {
-        this.route.navigate(['/main-subjects']);
+        this.route.navigate(['/main-subjects'], {
+          state: {
+            data: {
+              idUsuario: history.state.data.idUsuario,
+              idMateria: history.state.data.idMateria,
+            },
+          },
+        });
       });
   }
 

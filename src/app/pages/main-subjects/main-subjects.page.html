@@ -23,19 +23,20 @@
                 font-weight: normal !important;
                 font-size: 25px;">Matérias</span>
           </ion-row>
+          <ion-icon name="refresh" (click)="relistarSubjects()" style="color: #ffffff;"></ion-icon>
           <ion-icon name="add-outline"  (click)="navigateToRegisterSubject()" style="color: #ffffff;"></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngFor="let subject of subjects" class="todays-tasks-content">
-      <ion-card class="item-card" (click)="navigateToSelectedSubject(subject)">
+      <ion-card class="item-card">
         <ion-card-content class="item-card-content">
           <ion-row>
             <ion-card-title class="item-card-title">{{subject.nome}}</ion-card-title>
             <ion-row>
-              <ion-icon name="create-outline"></ion-icon>
-              <ion-icon name="trash-outline"></ion-icon>
+              <ion-icon name="create-outline" (click)="navigateToSelectedSubject(subject)"></ion-icon>
+              <!-- <ion-icon name="trash-outline"></ion-icon> -->
             </ion-row>
           </ion-row>
         </ion-card-content>

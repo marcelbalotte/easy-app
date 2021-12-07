@@ -53,9 +53,11 @@ export class LoginPage implements OnInit {
       .fazerLogin(this.usuarioLogin.login, this.usuarioLogin.senha)
       .then((response) => {
         if (response != null) {
-          this.route.navigate(['/home']);
+          this.route.navigate(['/home'], {
+            state: { data: { idUsuario: response.id, idMateria: null } },
+          });
         } else {
-          this.exibirAlerta('Usuário não localizado!')
+          this.exibirAlerta('Usuário não localizado!');
         }
       });
   }

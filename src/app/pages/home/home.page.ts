@@ -19,15 +19,18 @@ export class HomePage {
   ) {}
 
   ngOnInit() {
-    this.listarTaskDiarias(1);
+    this.listarTaskDiarias(history.state.data.idUsuario);
   }
 
   navigateToMainSubjects() {
-    this.route.navigate(['/main-subjects']);
-  }
-
-  navigateToCalendar() {
-    this.route.navigate(['/calendar']);
+    this.route.navigate(['/main-subjects'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: history.state.data.idMateria,
+        },
+      },
+    });
   }
 
   navigateToLogin() {

@@ -22,6 +22,7 @@
                 font-weight: normal !important;
                 font-size: 25px;">{{pageTitle}}</span>
           </ion-row>
+          <ion-icon name="refresh" style="color: #ffffff;" (click)="relistarTask()"></ion-icon>
           <ion-icon name="add-outline" style="color: #ffffff;" (click)="navigateToRegisterTask()"></ion-icon>
         </ion-row>
       </ion-card-title>
@@ -35,7 +36,7 @@
               <p class="activity">{{task.nome}}</p>
               <p class="activity">{{task.data_atividade}}</p>
             </ion-col>
-            <ion-icon name="checkmark-outline" class="icon-center"></ion-icon>
+            <!-- <ion-icon name="checkmark-outline" class="icon-center"></ion-icon> -->
           </ion-row>
         </ion-card-content>
       </ion-card>

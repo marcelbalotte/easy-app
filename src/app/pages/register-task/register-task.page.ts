@@ -47,18 +47,25 @@ export class RegisterTaskPage implements OnInit {
 
   navigateToSubject() {
     this.route
-    .navigateByUrl('/subject', { skipLocationChange: true })
-    .then(() => {
-      this.route.navigate(['/subject']);
-    });
+      .navigateByUrl('/subject', { skipLocationChange: true })
+      .then(() => {
+        this.route.navigate(['/subject'], {
+          state: {
+            data: {
+              idUsuario: history.state.data.idUsuario,
+              idMateria: history.state.data.idMateria,
+            },
+          },
+        });
+      });
   }
 
   salvarTask() {
     this.taskCadastro.materia = new Subject();
     this.taskCadastro.user = new User();
 
-    this.taskCadastro.materia.id = 1;
-    this.taskCadastro.user.id = 1;
+    this.taskCadastro.materia.id = history.state.data.idMateria;
+    this.taskCadastro.user.id = history.state.data.idUsuario;
 
     this.taskCadastro.data = this.datePipe.transform(
       this.taskCadastro.data,
@@ -66,14 +73,13 @@ export class RegisterTaskPage implements OnInit {
     );
 
     if (this.formTask.valid) {
-      this.taskService.cadastrar(this.taskCadastro)
-      .then(response =>{
+      this.taskService.cadastrar(this.taskCadastro).then((response) => {
         if (response != null && response.id > 0) {
           this.exibirAlerta('Atividade cadastrada com sucesso!');
         } else {
           this.exibirAlerta('Não foi possível cadastrar atividade!');
         }
-      })
+      });
       this.taskCadastro = new Task();
     } else {
       this.exibirAlerta('Preencher todos os campos!');

@@ -1,3 +1,4 @@
+import { SubjectService } from './../../services/subject.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
@@ -16,28 +17,35 @@ export class SubjectPage implements OnInit {
   constructor(
     private route: Router,
     private taskService: TaskService,
+    private subjectService: SubjectService,
     private datePipe: DatePipe
-  ) {
-    const navigation = this.route.getCurrentNavigation();
-
-    const state = navigation.extras.state as {
-      subject: any;
-    };
-
-    this.pageTitle = state.subject.nome;
-    this.idSubject = state.subject.id;
-  }
+  ) {}
 
   ngOnInit() {
-    this.listarTask(this.idSubject, 1);
+    this.pageTitle = history.state.data.nomeMateria;
+    this.listarTask(history.state.data.idMateria, history.state.data.idUsuario);
   }
 
   navigateToRegisterTask() {
-    this.route.navigate(['/register-task']);
+    this.route.navigate(['/register-task'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: history.state.data.idMateria,
+        },
+      },
+    });
   }
 
   navigateToMainSubjects() {
-    this.route.navigate(['/main-subjects']);
+    this.route.navigate(['/main-subjects'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: history.state.data.idMateria,
+        },
+      },
+    });
   }
 
   listarTask(idMateria: number, idUsuario: number) {
@@ -55,5 +63,9 @@ export class SubjectPage implements OnInit {
           });
         }
       });
+  }
+
+  relistarTask() {
+    this.listarTask(history.state.data.idMateria, history.state.data.idUsuario);
   }
 }

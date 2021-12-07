@@ -1,46 +1,62 @@
-import { Subject } from './../../models/subject.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { SubjectService } from 'src/app/services/subject.service';
-import { HttpClient, HttpHandler } from '@angular/common/http';
-
-const navigationExtras: NavigationExtras = {
-  state: {
-    subject:[]
-  },
-};
 
 @Component({
   selector: 'app-main-subjects',
   templateUrl: './main-subjects.page.html',
-  styleUrls: ['./main-subjects.page.scss']
+  styleUrls: ['./main-subjects.page.scss'],
 })
 export class MainSubjectsPage implements OnInit {
   constructor(private route: Router, private subjectService: SubjectService) {}
 
-  subjects:any;
+  subjects: any;
 
   ngOnInit() {
-    this.listarSubjects(1);
+    this.listarSubjects(history.state.data.idUsuario);
   }
 
   navigateToHome() {
-    this.route.navigate(['/home']);
+    this.route.navigate(['/home'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: null
+        },
+      },
+    });
   }
 
   navigateToRegisterSubject() {
-    this.route.navigate(['/register-subjects']);
+    this.route.navigate(['/register-subjects'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: null
+        },
+      },
+    });
   }
 
-  navigateToSelectedSubject(subject) {
-    navigationExtras.state.subject = subject;
-    this.route.navigate(['/subject'], navigationExtras);
+  navigateToSelectedSubject(subject: any) {
+    this.route.navigate(['/subject'], {
+      state: {
+        data: {
+          idUsuario: history.state.data.idUsuario,
+          idMateria: subject.id,
+          nomeMateria: subject.nome
+        },
+      },
+    });
   }
 
   listarSubjects(idUsuario: number) {
-    return this.subjectService.listarTodos(idUsuario)
-    .then((response) => {
+    return this.subjectService.listarTodos(idUsuario).then((response) => {
       this.subjects = response;
     });
+  }
+
+  relistarSubjects(){
+    this.listarSubjects(history.state.data.idUsuario);
   }
 }
