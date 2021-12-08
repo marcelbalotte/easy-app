@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class SubjectService {
-  url: string = 'http://localhost:8081/api';
+  url: string = 'http://192.168.15.11:8081/api';
 
   constructor(private http: HttpClient) {}
 
@@ -57,6 +57,32 @@ export class SubjectService {
   async atualizar(materia: Subject): Promise<Subject> {
     return this.http
       .put<Subject>(`${this.url}/materias`, materia)
+      .toPromise()
+      .then((response) => {
+        return response;
+      });
+  }
+
+  async deletar(materia: Subject): Promise<Subject> {
+    let headers = new HttpHeaders();
+
+    this.headers.append('Access-Control-Allow-Origin', '*');
+    this.headers.append('Access-Control-Allow-Credentials', 'true');
+    this.headers.append(
+      'Access-Control-Allow-Methods',
+      'GET,HEAD,OPTIONS,POST,PUT'
+    );
+    this.headers.append(
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
+    );
+
+    let options = {
+      headers: headers,
+    };
+
+    return this.http
+      .delete<Subject>(`${this.url}/materias/${materia.id}`, options)
       .toPromise()
       .then((response) => {
         return response;

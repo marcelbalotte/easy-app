@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class TaskService {
-  url: string = 'http://localhost:8081/api';
+  url: string = 'http://192.168.15.11:8081/api';
 
   headers = new Headers();
 
@@ -52,6 +52,32 @@ export class TaskService {
 
     return this.http
       .post<Task>(`${this.url}/atividades`, atividade, options)
+      .toPromise()
+      .then((response) => {
+        return response;
+      });
+  }
+
+  async marcarTask(atividade: Task): Promise<Task> {
+    let headers = new HttpHeaders();
+
+    this.headers.append('Access-Control-Allow-Origin', '*');
+    this.headers.append('Access-Control-Allow-Credentials', 'true');
+    this.headers.append(
+      'Access-Control-Allow-Methods',
+      'GET,HEAD,OPTIONS,POST,PUT,PATCH'
+    );
+    this.headers.append(
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
+    );
+
+    let options = {
+      headers: headers,
+    };
+
+    return this.http
+      .put<Task>(`${this.url}/atividades/${atividade.id}`, null, options)
       .toPromise()
       .then((response) => {
         return response;

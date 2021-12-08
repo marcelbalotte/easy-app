@@ -1,8 +1,10 @@
+import { Task } from 'src/app/models/task.model';
 import { SubjectService } from './../../services/subject.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
 import { DatePipe } from '@angular/common';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-subject',
@@ -17,8 +19,8 @@ export class SubjectPage implements OnInit {
   constructor(
     private route: Router,
     private taskService: TaskService,
-    private subjectService: SubjectService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    public alertController: AlertController
   ) {}
 
   ngOnInit() {
@@ -67,5 +69,29 @@ export class SubjectPage implements OnInit {
 
   relistarTask() {
     this.listarTask(history.state.data.idMateria, history.state.data.idUsuario);
+  }
+
+  marcarTask(atividade: Task) {
+    atividade.marcador = !atividade.marcador;
+    
+    return this.taskService.marcarTask(atividade).then((response) => {
+      if (response != null) {
+        this.exibirAlerta("Ativiade marcada com sucesso!");
+        this.relistarTask();
+      } else {
+        this.exibirAlerta("Não foi possível marcar atividade!");
+      }
+    });
+  }
+
+  exibirAlerta(mensagem: string) {
+    this.alertController
+      .create({
+        message: mensagem,
+        buttons: ['OK'],
+      })
+      .then((res) => {
+        res.present();
+      });
   }
 }

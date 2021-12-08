@@ -65,12 +65,15 @@ export class RegisterTaskPage implements OnInit {
     this.taskCadastro.user = new User();
 
     this.taskCadastro.materia.id = history.state.data.idMateria;
+    this.taskCadastro.marcador = false;
     this.taskCadastro.user.id = history.state.data.idUsuario;
 
     this.taskCadastro.data = this.datePipe.transform(
       this.taskCadastro.data,
       "yyyy-MM-dd'T'HH:mm:ss"
     );
+
+    console.log(this.taskCadastro);
 
     if (this.formTask.valid) {
       this.taskService.cadastrar(this.taskCadastro).then((response) => {

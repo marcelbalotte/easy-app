@@ -22,8 +22,8 @@
                 font-weight: normal !important;
                 font-size: 25px;">{{pageTitle}}</span>
           </ion-row>
-          <ion-icon name="refresh" style="color: #ffffff;" (click)="relistarTask()"></ion-icon>
-          <ion-icon name="add-outline" style="color: #ffffff;" (click)="navigateToRegisterTask()"></ion-icon>
+          <ion-icon name="sync-outline" style="color: #ffffff;" (click)="relistarTask()"></ion-icon>
+          <ion-icon name="add-outline" style="color: #ffffff;" (click)="navigateToRegisterTask()" ></ion-icon>
         </ion-row>
       </ion-card-title>
     </ion-card-header>
@@ -36,7 +36,8 @@
               <p class="activity">{{task.nome}}</p>
               <p class="activity">{{task.data_atividade}}</p>
             </ion-col>
-            <!-- <ion-icon name="checkmark-outline" class="icon-center"></ion-icon> -->
+            <ion-icon name="checkmark-circle-outline" class="icon-center" style="color: #3db2b3;" *ngIf="!task.marcador" (click)="marcarTask(task)"></ion-icon>
+            <ion-icon name="remove-circle-outline" class="icon-center" style="color: #eb445a;" *ngIf="task.marcador" (click)="marcarTask(task)"></ion-icon>
           </ion-row>
         </ion-card-content>
       </ion-card>

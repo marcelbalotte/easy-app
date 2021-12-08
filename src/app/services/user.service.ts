@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  url: string = 'http://localhost:8081/api';
+  url: string = 'http://192.168.15.11:8081/api';
 
   headers = new Headers();
 

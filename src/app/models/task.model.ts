@@ -6,5 +6,6 @@ export class Task {
   nome: string;
   data: string;
   user: User;
+  marcador: boolean;
   materia: Subject;
 }

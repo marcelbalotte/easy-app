@@ -50,4 +50,8 @@ export class HomePage {
       }
     });
   }
+
+  relistarTasksDiarias(){
+    this.listarTaskDiarias(history.state.data.idUsuario);
+  }
 }

@@ -12,16 +12,18 @@
 <ion-content [fullscreen]="true">
   <ion-card class="todays-tasks">
     <ion-card-header class="todays-tasks-header">
-      <ion-item lines="none" style="--background: none">
-        <ion-card-title>
-          <span style="font-weight: normal !important; font-size: 25px;">Atividades de hoje</span>
-        </ion-card-title>
-
-        <ion-buttons slot="start">
-          <ion-icon class="icon-toolbar" style="color: black; margin-left: -15px; margin-right: -15px;" name="today-outline">
-          </ion-icon>
-        </ion-buttons>
-      </ion-item>
+      <ion-card-title>
+        <ion-row>
+          <ion-row>
+            <ion-icon name="today-outline" style="margin-top: -2px"></ion-icon>
+            <span style="
+                margin-left: calc(0.7vh);
+                font-weight: normal !important;
+                font-size: 25px;">Atividades do dia</span>
+          </ion-row>
+          <ion-icon name="sync-outline" style="color: #ffffff;" (click)="relistarTasksDiarias()"></ion-icon>
+        </ion-row>
+      </ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="todays-tasks-content">
@@ -31,6 +33,7 @@
           <ion-row>
             <ion-col>
               <p class="activity">{{task.nome}}</p>
+              <p class="activity">{{task.materia.nome}}</p>
               <p class="activity">{{task.data_atividade}}</p>
             </ion-col>
           </ion-row>

@@ -1,6 +1,8 @@
+import { Subject } from 'src/app/models/subject.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { SubjectService } from 'src/app/services/subject.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-main-subjects',
@@ -8,7 +10,11 @@ import { SubjectService } from 'src/app/services/subject.service';
   styleUrls: ['./main-subjects.page.scss'],
 })
 export class MainSubjectsPage implements OnInit {
-  constructor(private route: Router, private subjectService: SubjectService) {}
+  constructor(
+    private route: Router,
+    private subjectService: SubjectService,
+    public alertController: AlertController
+  ) {}
 
   subjects: any;
 
@@ -21,7 +27,7 @@ export class MainSubjectsPage implements OnInit {
       state: {
         data: {
           idUsuario: history.state.data.idUsuario,
-          idMateria: null
+          idMateria: null,
         },
       },
     });
@@ -32,7 +38,7 @@ export class MainSubjectsPage implements OnInit {
       state: {
         data: {
           idUsuario: history.state.data.idUsuario,
-          idMateria: null
+          idMateria: null,
         },
       },
     });
@@ -44,7 +50,7 @@ export class MainSubjectsPage implements OnInit {
         data: {
           idUsuario: history.state.data.idUsuario,
           idMateria: subject.id,
-          nomeMateria: subject.nome
+          nomeMateria: subject.nome,
         },
       },
     });
@@ -56,7 +62,25 @@ export class MainSubjectsPage implements OnInit {
     });
   }
 
-  relistarSubjects(){
+  relistarSubjects() {
     this.listarSubjects(history.state.data.idUsuario);
+  }
+
+  deletarSubject(materia: Subject) {
+    return this.subjectService.deletar(materia).then((response) => {
+      this.exibirAlerta("Matéria excluída com sucesso!")
+      this.relistarSubjects();
+    });
+  }
+
+  exibirAlerta(mensagem: string) {
+    this.alertController
+      .create({
+        message: mensagem,
+        buttons: ['OK'],
+      })
+      .then((res) => {
+        res.present();
+      });
   }
 }
